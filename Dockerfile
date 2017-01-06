@@ -6,3 +6,5 @@ RUN /usr/local/rvm/scripts/rvm install ruby-2.3.2@capistrano --create &&\
     which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )  &&\
     eval $(ssh-agent -s) &&\
     mkdir -p ~/.ssh
+
+ENTRYPOINT /bin/bash -l
