@@ -7,9 +7,8 @@ RUN /usr/local/rvm/scripts/rvm install ruby-2.3.2@capistrano --create &&\
     which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y ) &&\
     eval $(ssh-agent -s) &&\
     mkdir -p ~/.ssh &&\
-    apt-get -y install npm
+    apt-get update && apt-get -y install npm
 
-RUN ln -s /usr/local/bin/node /usr/bin/node &&\
-    ln -s /usr/local/bin/npm /usr/bin/npm
+RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 ENTRYPOINT /bin/bash -l
