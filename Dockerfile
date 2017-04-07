@@ -11,4 +11,6 @@ RUN /usr/local/rvm/scripts/rvm install ruby-2.3.2@capistrano --create &&\
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
+RUN npm install --global gulp-cli
+
 ENTRYPOINT /bin/bash -l
